@@ -43,6 +43,7 @@ print_welcome_banner
 
 interface="$(prompt_interface)"
 action="$(prompt_action)"
+protocol="$(prompt_protocol)"
 src_ip="$(prompt_source_ip)"
 dest_ip="$(prompt_destination_ip)"
 ports="$(prompt_ports)"
@@ -58,4 +59,9 @@ if [ $action == "pass" ]; then
             easyrule pass lan $protocol $src_ip $dest_ip $port
         fi
     done
+elif [ $action == "block" ]; then
+    easyrule block $interface $src_ip
+else
+    echo "Action not permitted"
 fi
+
