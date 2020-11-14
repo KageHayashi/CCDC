@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 print_welcome_banner() {
     clear
